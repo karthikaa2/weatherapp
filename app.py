@@ -36,7 +36,7 @@ def create_city():
     return jsonify({"message": "City created successfully", "data": data}), 201
 
 # POST - update existing city
-@app.route("/update-city", methods=["POST"])
+@app.route("/update-city", methods=["PUT"])
 def update_city():
     data = request.get_json()
     city_name = data.get("city", "").lower()
@@ -46,7 +46,7 @@ def update_city():
     return jsonify({"message": "City updated successfully", "data": city_data[city_name]}), 200
 
 # POST - delete city
-@app.route("/delete-city", methods=["POST"])
+@app.route("/delete-city", methods=["DELETE"])
 def delete_city():
     data = request.get_json()
     city_name = data.get("city", "").lower()
