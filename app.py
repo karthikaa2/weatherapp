@@ -46,7 +46,7 @@ def update_city():
     return jsonify({"message": "City updated successfully", "data": city_data[city_name]}), 200
 
 # POST - delete city
-@app.route("/delete-city", methods=["DELETE"])
+@app.route("/delete-city", methods=["POST"])
 def delete_city():
     data = request.get_json()
     city_name = data.get("city", "").lower()
